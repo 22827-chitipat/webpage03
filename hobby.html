@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>งานอดิเรก | Orbit Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="starfield">
+    <div class="stars-small"></div>
+    <div class="stars-big"></div>
+  </div>
+  <div class="nebula"></div>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="brand"><span class="planet-mark"></span> Orbit Portfolio</a>
+      <button class="nav-toggle" id="navToggle" aria-label="เปิดเมนู">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+        <li><a href="education.html">การศึกษา</a></li>
+        <li><a href="hobby.html" class="active">งานอดิเรก</a></li>
+        <li><a href="contact.html">ติดต่อ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <span class="eyebrow">นอกยานอวกาศ</span>
+      <h1 style="margin-top:14px; font-size:2.1rem;">งานอดิเรกของฉัน</h1>
+      <p style="color:var(--grey); max-width:560px; margin-top:12px;">
+        เวลาว่างของผมเต็มไปด้วยเรื่องสนุกๆ หลากหลาย ตั้งแต่ลูกหนังยันหน้าจอเกม
+      </p>
+
+      <div class="hobby-grid">
+        <div class="hobby-card fade-up">
+          <span class="emoji">⚽</span>
+          <h3>ฟุตบอล</h3>
+          <p>เชียร์ทีมโปรดทุกแมตช์ และลงเล่นเองกับเพื่อนทุกสัปดาห์</p>
+        </div>
+        <div class="hobby-card fade-up delay-1">
+          <span class="emoji">🎮</span>
+          <h3>เกม</h3>
+          <p>ชอบเล่นเกมและเกมแนวผจญภัยกับเพื่อนๆ ยามว่าง</p>
+        </div>
+        <div class="hobby-card fade-up delay-2">
+          <span class="emoji">🎵</span>
+          <h3>เพลง</h3>
+          <p>ฟังเพลงหลากแนวระหว่างทำการบ้าน ช่วยให้มีสมาธิมากขึ้น</p>
+        </div>
+        <div class="hobby-card fade-up">
+          <span class="emoji">🔭</span>
+          <h3>ดูดาว</h3>
+          <p>ชอบมองท้องฟ้ายามค่ำคืน และเรียนรู้เรื่องระบบสุริยะ</p>
+        </div>
+        <div class="hobby-card fade-up delay-1">
+          <span class="emoji">📐</span>
+          <h3>คณิตศาสตร์</h3>
+          <p>ชอบคิดเลขและแก้โจทย์ท้าทายสมองยามว่าง</p>
+        </div>
+        <div class="hobby-card fade-up delay-2">
+          <span class="emoji">💻</span>
+          <h3>เทคโนโลยี</h3>
+          <p>ชอบลองเขียนโค้ดและออกแบบเว็บไซต์แบบนี้แหละ!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="planet-mark"></span> Orbit Portfolio</a>
+        <p>เว็บไซต์แนะนำตัวของชิติพัทธ์ คงจันทร์ นักเรียนชั้น ม.3/2 จัดทำเพื่อโครงงานวิชาคอมพิวเตอร์</p>
+      </div>
+      <div class="footer-col">
+        <h4>เมนู</h4>
+        <ul>
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+          <li><a href="education.html">การศึกษา</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>เพิ่มเติม</h4>
+        <ul>
+          <li><a href="hobby.html">งานอดิเรก</a></li>
+          <li><a href="contact.html">ติดต่อ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2569 ชิติพัทธ์ คงจันทร์ · ม.3/2</span>
+      <span>สร้างด้วย HTML5 &amp; CSS3</span>
+    </div>
+  </footer>
+
+  <button class="launch-fab" id="launchFab" title="ปล่อยจรวด!" aria-label="ปล่อยจรวด">🚀</button>
+  <div class="launch-flash" id="launchFlash">BLAST OFF! 🚀</div>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    const launchFab = document.getElementById('launchFab');
+    const launchFlash = document.getElementById('launchFlash');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    launchFab.addEventListener('click', () => {
+      launchFlash.classList.remove('show');
+      void launchFlash.offsetWidth;
+      launchFlash.classList.add('show');
+
+      if (!reduceMotion) {
+        const colors = ['#7C5CFF', '#22D3EE', '#FFD166', '#ffffff'];
+        for (let i = 0; i < 28; i++) {
+          const piece = document.createElement('div');
+          piece.className = 'star-piece';
+          piece.style.left = Math.random() * 100 + 'vw';
+          piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+          piece.style.animationDuration = (1.6 + Math.random() * 1.4) + 's';
+          piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+          document.body.appendChild(piece);
+          setTimeout(() => piece.remove(), 3200);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
